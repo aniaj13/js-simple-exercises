@@ -15,11 +15,19 @@ function printNumbers(n) {
 // other version
 
 const printNum = (n) => {
-    for (let i = 1; i <= n; i++) {
-        let output = '';
-        if (i % 3 === 0) {output += 'Fizz'}
-        if (i % 5 === 0) {output += 'Buzz'}
-        console.log(output || i)
+    if (n < 1 || !Number.isInteger(n)) {
+        console.error('Input must be a number greater than 0')
+    } else {
+        for (let i = 1; i <= n; i++) {
+            let output = '';
+            if (i % 3 === 0) {
+                output += 'Fizz'
+            }
+            if (i % 5 === 0) {
+                output += 'Buzz'
+            }
+            console.log(output || i)
+        }
     }
 }
 
